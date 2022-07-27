@@ -27,7 +27,7 @@
 
 form {
 	width: 100%;
-	max-width: 400px;
+	max-width: 390px;
 }
 
 input:focus {
@@ -149,7 +149,7 @@ input[type="radio"] {
 
 .workspace-predef {
 	height: 45px;
-	padding: 14px;
+	padding: 14px 8px;
 	font-size: 0.8rem;
 	background-color: #f6f6f6;
 	width: 30%;
