@@ -1,4 +1,4 @@
-import { MyButton } from "../../Elements";
+import { MyButton } from "../Elements";
 
 const FormFour = ({ state, setState }) => {
 	return (

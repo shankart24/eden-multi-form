@@ -1,4 +1,4 @@
-import { MyRadioInput, MyButton } from "../../Elements";
+import { MyRadioInput, MyButton } from "../Elements";
 
 const FormThree = ({ state, setState, handleButtonLogic, handleInputChange }) => {
 	return (

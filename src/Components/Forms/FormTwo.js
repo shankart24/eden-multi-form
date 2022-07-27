@@ -1,4 +1,4 @@
-import { MyInput, MyButton } from "../../Elements";
+import { MyInput, MyButton } from "../Elements";
 
 const FormTwo = ({ state, setState, handleButtonLogic, handleInputChange }) => {
 	return (

@@ -1,10 +1,10 @@
 import logo from "./logo.svg";
 import "./App.css";
 import { useState } from "react";
-import FormOne from "./Components/Elements/Forms/FormOne";
-import FormTwo from "./Components/Elements/Forms/FormTwo";
-import FormThree from "./Components/Elements/Forms/FormThree";
-import FormFour from "./Components/Elements/Forms/FormFour";
+import FormOne from "./Components/Forms/FormOne";
+import FormTwo from "./Components/Forms/FormTwo";
+import FormThree from "./Components/Forms/FormThree";
+import FormFour from "./Components/Forms/FormFour";
 
 const App = () => {
 	const [state, setState] = useState({
