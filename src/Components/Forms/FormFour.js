@@ -13,7 +13,8 @@ const FormFour = ({ state, setState }) => {
 					name="Launch Eden"
 					handler={() => {
 						alert("Yay! Form Submitted!");
-						console.log(state);
+						const formData = { ...state.formOne, ...state.formTwo, ...state.formThree };
+						console.log(formData);
 					}}
 				/>
 			</form>

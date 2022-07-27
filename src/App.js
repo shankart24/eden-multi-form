@@ -20,7 +20,6 @@ const App = () => {
 			stepThree: false,
 			stepFour: false,
 		},
-
 		formOne: { fullName: "", displayName: "" },
 		formTwo: { workspaceName: "", workspaceUrl: "" },
 		formThree: { usageType: "For myself" },
@@ -51,7 +50,7 @@ const App = () => {
 	return (
 		<section className="container">
 			<section className="content">
-				<img src={require("./assets/logo.JPG")} className="logo" />
+				<img src={require("./assets/logo.JPG")} className="logo" alt="Eden" />
 				<div className="progress-section">
 					<div className="circle" style={handleCircleStyles("stepOne", "")}>
 						1
