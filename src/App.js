@@ -51,7 +51,7 @@ const App = () => {
 	return (
 		<section className="container">
 			<section className="content">
-				<img src="./assets/logo.jpg" className="logo" />
+				<img src="/assets/logo.jpg" className="logo" />
 				<div className="progress-section">
 					<div className="circle" style={handleCircleStyles("stepOne", "")}>
 						1
