@@ -1,6 +1,6 @@
 import logo from "./logo.svg";
 import "./App.css";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import FormOne from "./Components/Forms/FormOne";
 import FormTwo from "./Components/Forms/FormTwo";
 import FormThree from "./Components/Forms/FormThree";
@@ -47,6 +47,10 @@ const App = () => {
 		setState((state) => ({ ...state, [formName]: { ...state[formName], [name]: value } }));
 	};
 
+	const isFormFilled = (field1, field2, formName) => {
+		return state[formName][field1].length !== 0 && state[formName][field2].length !== 0 ? "" : "Please fill all the fields!";
+	};
+
 	return (
 		<section className="container">
 			<section className="content">
@@ -75,9 +79,9 @@ const App = () => {
 					</div>
 				</div>
 				{state.active.stepOne ? (
-					<FormOne {...{ state, setState, handleButtonLogic, handleInputChange }} />
+					<FormOne {...{ state, setState, handleButtonLogic, handleInputChange, isFormFilled }} />
 				) : state.active.stepTwo ? (
-					<FormTwo {...{ state, setState, handleButtonLogic, handleInputChange }} />
+					<FormTwo {...{ state, setState, handleButtonLogic, handleInputChange, isFormFilled }} />
 				) : state.active.stepThree ? (
 					<FormThree {...{ state, setState, handleButtonLogic, handleInputChange }} />
 				) : state.active.stepFour ? (

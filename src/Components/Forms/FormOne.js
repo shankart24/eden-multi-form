@@ -1,6 +1,6 @@
 import { MyInput, MyButton } from "../Elements";
 
-const FormOne = ({ state, setState, handleButtonLogic, handleInputChange }) => {
+const FormOne = ({ state, setState, handleButtonLogic, handleInputChange, isFormFilled }) => {
 	return (
 		<>
 			<div className="headings-section">
@@ -24,7 +24,17 @@ const FormOne = ({ state, setState, handleButtonLogic, handleInputChange }) => {
 					handler={(e) => handleInputChange(e, "formOne")}
 					value={state.formOne.displayName}
 				/>
-				<MyButton name="Create Workspace" handler={() => handleButtonLogic("stepTwo", "stepOne")} />
+				<MyButton
+					name="Create Workspace"
+					handler={() => {
+						const errorMsg = isFormFilled("fullName", "displayName", "formOne");
+						if (errorMsg.length === 0) {
+							handleButtonLogic("stepTwo", "stepOne");
+						} else {
+							alert(errorMsg);
+						}
+					}}
+				/>
 			</form>
 		</>
 	);

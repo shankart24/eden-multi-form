@@ -1,6 +1,6 @@
 import { MyInput, MyButton } from "../Elements";
 
-const FormTwo = ({ state, setState, handleButtonLogic, handleInputChange }) => {
+const FormTwo = ({ state, setState, handleButtonLogic, handleInputChange, isFormFilled }) => {
 	return (
 		<>
 			<div className="headings-section">
@@ -32,7 +32,17 @@ const FormTwo = ({ state, setState, handleButtonLogic, handleInputChange }) => {
 						/>
 					</div>
 				</div>
-				<MyButton name="Create Workspace" handler={() => handleButtonLogic("stepThree", "stepTwo")} />
+				<MyButton
+					name="Create Workspace"
+					handler={() => {
+						const errorMsg = isFormFilled("workspaceName", "workspaceUrl", "formTwo");
+						if (errorMsg.length === 0) {
+							handleButtonLogic("stepThree", "stepTwo");
+						} else {
+							alert(errorMsg);
+						}
+					}}
+				/>
 			</form>
 		</>
 	);
