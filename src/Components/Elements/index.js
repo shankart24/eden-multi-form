@@ -7,6 +7,20 @@ const MyInput = ({ name, placeholder, type, label, handler, value }) => {
 	);
 };
 
+const MyInputWithLabel = ({ name, placeholder, type, label, handler, value, extraMsg, predefinedLabel }) => {
+	return (
+		<div className="input-div">
+			<label htmlFor="workspaceUrl">
+				{label} <span style={{ fontSize: "0.7rem", color: "#979dab" }}>({extraMsg})</span>
+			</label>
+			<div className="workspace-input-div">
+				<div className="workspace-predef">{predefinedLabel}</div>
+				<input id={name} name={name} type={type} placeholder={placeholder} value={value} onChange={handler} />
+			</div>
+		</div>
+	);
+};
+
 const MyRadioInput = ({ name, desc, label, handler, value, currentlyActive }) => {
 	const styles = {
 		label: {
@@ -83,4 +97,4 @@ const MyButton = ({ name, handler }) => {
 	);
 };
 
-export { MyInput, MyRadioInput, MyButton };
+export { MyInput, MyInputWithLabel, MyRadioInput, MyButton };
